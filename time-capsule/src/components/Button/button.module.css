@@ -1,0 +1,96 @@
+.button {
+  padding: 0.5rem;
+
+  cursor: pointer;
+
+  svg {
+    block-size: 100%;
+    inline-size: auto;
+  }
+  transition: 0.2s;
+
+  &.solid {
+    background-color: var(--color--golde-yellow);
+
+    border: none;
+
+    &:hover,
+    &:focus {
+      background-color: var(--color--golde-yellow-hover);
+    }
+  }
+
+  &.otlined {
+    background-color: var(--color-surface);
+
+    border: 1px solid var(--color--golde-yellow);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color--golde-yellow-fade);
+    }
+  }
+
+  &.ghost {
+    background-color: transparent;
+
+    border: none;
+  }
+
+  &.small {
+    block-size: 2rem;
+  }
+
+  &.medium {
+    block-size: 2.25rem;
+  }
+
+  &.large {
+    block-size: 3rem;
+  }
+
+  &.rectangel {
+    &.medium {
+      padding-inline: 0.5rem;
+    }
+
+    &.large {
+      padding-inline: 0.75rem;
+    }
+  }
+
+  &.rectangel {
+    border-radius: 0.25rem;
+  }
+
+  &.square {
+    border-radius: 0.25rem;
+
+    aspect-ratio: 1/1;
+  }
+
+  &.circle {
+    border-radius: 999rem;
+  }
+
+  &.danger {
+    &:hover,
+    &:focus {
+      color: var(--color--danger);
+    }
+  }
+
+  &.golden {
+    &:hover,
+    &:focus {
+      color: var(--color--golde-yellow);
+    }
+  }
+}
+
+&.none {
+  &:hover,
+  &:focus {
+    color: transparent;
+  }
+}

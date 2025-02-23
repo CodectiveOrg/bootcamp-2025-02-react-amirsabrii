@@ -1,0 +1,17 @@
+.text-area {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+
+  resize: vertical;
+  min-block-size: 3rem;
+  max-block-size: 12rem;
+
+  padding: 0.5rem;
+
+  border: 2px solid var(--color--golde-yellow);
+  border-radius: 0.5rem;
+
+  &:focus {
+    outline: none;
+  }
+}

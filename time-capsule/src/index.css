@@ -1,0 +1,52 @@
+:root {
+  --colo-black: #252525;
+  --color--withe: #f7f7f7;
+  --color--golde-yellow: hsl(45, 100%, 60%);
+  --color--golde-yellow-hover: hsl(52, 100%, 50%);
+  --color--golde-yellow-fade: hsl(52, 100%, 72%);
+  --color--danger: hsl(0, 100%, 47%);
+
+  --color-border: hsl(38, 100%, 80%);
+
+  --color-surface: var(--color--withe);
+  --color-text: var(--colo-black);
+
+  &.dark {
+    --color-surface: #252525;
+    --color-text: #7f7f7f;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Kanit", system-ui;
+}
+
+input,
+label,
+select,
+textarea,
+button,
+fieldset,
+legend,
+datalist,
+output,
+option,
+optgroup {
+  font: inherit;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  inline-size: min(45rem, 100% - 2rem);
+  margin-inline: auto;
+}

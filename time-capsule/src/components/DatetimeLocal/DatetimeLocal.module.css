@@ -1,0 +1,19 @@
+.datetime-local {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  input[type="date"],
+  input[type="time"] {
+    border: 2px solid var(--color--golde-yellow);
+    border-radius: 0.5rem;
+
+    padding: 0.5rem;
+
+    inline-size: 60%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

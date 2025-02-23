@@ -1,0 +1,10 @@
+.title {
+  display: flex;
+  justify-content: center;
+  margin-block: 2.5rem 1rem;
+
+  h1 {
+    font-weight: 500;
+    font-size: 1.75rem;
+  }
+}
