@@ -1,9 +1,9 @@
-import { Category } from "./category.ts";
+import { Vibe } from "./vibe.ts";
 
 export type Capsule = {
   id: string | number;
   title: string;
   date: Date;
-  description: string;
-  category: Category;
+  describtion: string;
+  vibe: Vibe;
 };

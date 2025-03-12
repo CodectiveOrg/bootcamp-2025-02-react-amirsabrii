@@ -1,7 +1,6 @@
 :root {
   --colo-black: hsl(0, 0%, 15%);
   --color--withe: hsl(0, 0%, 97%);
-
   --color--gold-yellow: hsl(45, 100%, 60%);
   --color--gold-yellow-hover: hsl(52, 100%, 50%);
   --color--gold-yellow-fade: hsl(52, 100%, 72%);
@@ -12,7 +11,7 @@
   --color--surface: var(--color--withe);
   --color--text: var(--colo-black);
 
-  &[data-theme="dark"] {
+  &.dark {
     --color--surface: hsl(0, 0%, 15%);
     --color--text: hsl(0, 0%, 97%);
   }
@@ -48,6 +47,6 @@ optgroup {
 body {
   background-color: var(--color--surface);
   color: var(--color--text);
-  inline-size: min(40rem, 100% - 2rem);
+  inline-size: min(45rem, 100% - 2rem);
   margin-inline: auto;
 }
