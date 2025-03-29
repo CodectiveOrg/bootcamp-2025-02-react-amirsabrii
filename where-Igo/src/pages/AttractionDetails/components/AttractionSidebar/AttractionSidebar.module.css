@@ -1,0 +1,31 @@
+.attraction-sidebar{
+    background-color: var(--color-surface-elevated);
+
+    box-shadow: var(--shadow);
+
+    border-radius: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding: 1.5rem;
+
+    .title{
+        font-size: var(--fz-500);
+        font-weight: 700;
+    }
+
+    .addres , .phone{
+        display: flex;
+        gap: 0.5rem;
+
+        svg{
+            color: var(--color-primary);
+
+            font-size: var(--fz-600);
+        }
+    }
+
+
+}

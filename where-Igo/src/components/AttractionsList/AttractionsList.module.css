@@ -1,0 +1,8 @@
+.acttraction-list {
+  block-size:max-content;
+
+  display: grid;
+  gap: 1.25rem;
+
+
+}

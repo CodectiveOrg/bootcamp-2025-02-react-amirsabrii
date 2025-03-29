@@ -1,0 +1,22 @@
+.attraction-details{
+
+    display: grid;
+    grid-template-areas: 'carousel sidebar' 'body body';
+    grid-template-columns: minmax(0 , 1fr) 20rem;
+    gap: 1.25rem;
+    align-items: start;
+
+    margin-block: 2rem;
+
+    .attraction-sidebar{
+        grid-area: sidebar ;
+    }
+
+    .carousel-thumbnail{
+        grid-area: carousel ;
+    }
+
+    .attraction-content{
+        grid-area: body ;
+    }
+}

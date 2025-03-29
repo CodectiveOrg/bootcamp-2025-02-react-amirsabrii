@@ -1,0 +1,42 @@
+.attraction-content {
+    background-color: var(--color-surface-elevated);
+    padding: 1.25rem;
+
+    border-radius: 1rem;
+    *,
+    *::before,
+    *::after {
+        margin: revert;
+        padding: revert;
+    }
+
+    ul {
+        list-style: unset;
+    }
+
+    a {
+        color: var(--color-primary);
+    }
+
+    p{
+        line-height:2rem;
+    }
+
+    img {
+        block-size: auto;
+        inline-size: 60%;
+
+        border-radius: 0.5rem;
+    }
+    
+    @media screen and (max-width: 700px)  {
+
+        img{
+            inline-size: 80%;
+        }
+    }@media screen and (max-width: 500px)  {
+        img{
+            inline-size: 100%;
+        }
+    }
+}
