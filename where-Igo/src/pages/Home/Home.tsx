@@ -4,7 +4,6 @@ import AttractionsList from "../../components/AttractionsList/AttractionsList.ts
 import Filters from "../../components/Filters/Filters.tsx";
 
 import FilterProvider from "../../Providers/FilterProvider.tsx";
-import AttractionsProvider from "../../Providers/AttractionsProvider.tsx";
 
 import styles from "./Home.module.css";
 
@@ -12,10 +11,8 @@ function Home(): ReactNode {
   return (
     <div className={styles.home}>
       <FilterProvider>
-        <AttractionsProvider>
-          <Filters />
-          <AttractionsList />
-        </AttractionsProvider>
+        <Filters />
+        <AttractionsList />
       </FilterProvider>
     </div>
   );

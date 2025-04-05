@@ -1,46 +1,43 @@
-import {ReactNode, useEffect, useState} from "react";
-
-import {Attraction as AttractionType} from "../../type/attraction.ts";
-
-import {useParams} from "react-router";
+import { ReactNode } from "react";
 
 import AttractionSidebar from "./components/AttractionSidebar/AttractionSidebar.tsx";
 
-import styles from "./AttractionDetails.module.css"
+import styles from "./AttractionDetails.module.css";
 import CaouselThumbnail from "./components/CaouselThumbnail/CaouselThumbnail.tsx";
 import AttractionContent from "./components/AttractionContent/AttractionContent.tsx";
+import { useQuery } from "@tanstack/react-query";
+import { fetchAttraction } from "../../api/fetch-attraction.ts";
+import { useParams } from "react-router";
 
-function AttractionDetails() :ReactNode{
+function AttractionDetails(): ReactNode {
+  const { id } = useParams();
 
-    const {id} = useParams()
+  const { data : attraction , isFetching  } = useQuery({
+    queryKey: ["attraction" , id],
+    queryFn: () => fetchAttraction(id),
+      staleTime : 70 * 1000
+  });
+  if (isFetching || !attraction){
+      return <>درحال بارگذاری...</>
+  }
+  return (
+    <div className={styles["attraction-details"]}>
+      <div className={styles["attraction-sidebar"]}>
 
-    const [attraction , setAttraction] = useState<AttractionType>()
+        <AttractionSidebar attraction={attraction} />
+      </div>
 
-    useEffect(() => {
-        const fetchAttraction = async (): Promise<void> => {
-            const responce = await fetch(
-                `${import.meta.env.VITE_API_BASE_URL}/attraction/${id}`,
-            );
-            const data = await responce.json();
-            setAttraction(data);
-        };
-        fetchAttraction().then();
-    }, [id]);
+      <div className={styles["carousel-thumbnail"]}>
 
-    if (!attraction){
-        return 'در حال بارگذاری'
-    }
-    return (
-        <div className={styles['attraction-details']}>
-            <div className={styles['attraction-sidebar']}> <AttractionSidebar attraction={attraction}/>  </div>
+        <CaouselThumbnail attraction={attraction} />
+      </div>
 
-            <div className={styles['carousel-thumbnail']}> <CaouselThumbnail attraction={attraction}/>  </div>
+      <div className={styles["attraction-content"]}>
 
-            <div className={styles['attraction-content']}> <AttractionContent attraction={attraction}/>  </div>
-
-
-        </div>
-    )
+        <AttractionContent attraction={attraction} />
+      </div>
+    </div>
+  );
 }
 
 export default AttractionDetails;
